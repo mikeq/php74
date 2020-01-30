@@ -1,5 +1,7 @@
 FROM php:7.4.2-apache
 
+# COPY apt.conf /etc/apt/apt.conf
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 git \
 vim \
@@ -13,6 +15,7 @@ libfreetype6-dev \
 libjpeg62-turbo-dev \
 libpng-dev \
 libxml2-dev \
+libzip-dev \
 cron \
 msmtp \
 && docker-php-ext-install -j$(nproc) gd soap zip \
