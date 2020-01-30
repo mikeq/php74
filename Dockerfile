@@ -4,6 +4,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 git \
 vim \
 zip \
+unzip \
+php-zip \
 less \
 libsqlite3-dev \
 net-tools \
