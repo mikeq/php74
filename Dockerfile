@@ -5,7 +5,6 @@ git \
 vim \
 zip \
 unzip \
-php-zip \
 less \
 libsqlite3-dev \
 net-tools \
@@ -16,7 +15,7 @@ libpng-dev \
 libxml2-dev \
 cron \
 msmtp \
-&& docker-php-ext-install -j$(nproc) gd soap \
+&& docker-php-ext-install -j$(nproc) gd soap zip \
 && apt-get -y autoremove \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
