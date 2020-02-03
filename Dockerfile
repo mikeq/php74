@@ -2,6 +2,8 @@ FROM php:7.4.2-apache
 
 # COPY apt.conf /etc/apt/apt.conf
 
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 git \
 vim \
@@ -18,6 +20,7 @@ libxml2-dev \
 libzip-dev \
 cron \
 msmtp \
+nodejs \
 && docker-php-ext-install -j$(nproc) gd soap zip \
 && apt-get -y autoremove \
 && apt-get clean \
